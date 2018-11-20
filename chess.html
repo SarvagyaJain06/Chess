@@ -1,0 +1,319 @@
+<script>
+    "use strict"
+    console.log("hii");
+
+
+
+    //base class
+ class Pieces  {
+        constructor(color,position,image,id,points,isAlive)
+        {
+            this.color = color;
+            this.position = position; 
+            this.image = image;
+            this.id = id;
+            this.points = points;
+            this.isAlive = isAlive;
+        }
+
+    }
+
+   /* // OBJECT OF kING IS CREATED
+    const King ={
+          color: "white",
+          position: "A,5",
+          image: "imageKing",
+          id : "W1",
+          point : "10"
+
+    };
+     console.log(King.color);*/
+    
+  /* 
+  const myPiece = new pieces("red","0,0","imagePieces","ID_pieces","000");
+        console.log(myPiece.position);
+*/
+ class King extends Pieces {
+        constructor(color,position,id,isAlive) 
+        {
+            super(color,position,"King",id,"Max",isAlive);
+        }
+       static movement(){
+            return "King moves 1 step";
+        }
+         CurrentPosition(Pieces){
+      return this.position;
+  }
+   }
+
+console.dir(King);   
+   //var BlackKing = Object.create(Object.create(pieces));
+   
+   //object of blackKing is created and calling methods of class 
+ /*  var BlackKing =Object.create(King);
+ BlackKing.color="Black";
+ console.log(BlackKing.color);
+ console.log(BlackKing.movement());
+BlackKing.live="dead";
+console.log(BlackKing.live);
+
+*/
+   // console.log(King.isPrototypeOf(BlackKing));
+   // console.log(pieces.isPrototypeOf(BlackKing));
+   //console.log(Base.isPrototypeOf(subInstance))
+    //const whiteKing = new King("white","4,A","White01");
+    //King.prototype = Object.create(pieces.prototype);
+   class Queen extends Pieces {
+        constructor(color,position,id,isAlive)
+        {
+            super(color,position,"Queen",id,"9",isAlive);
+        }
+        static movement(){
+            return "King moves * step";
+        }
+    }
+ //var k =Object.create(Object.create(Pieces));
+   //var k = new King("white","A5","imageKing","4*0",1);
+   //console.log(k.id);
+
+   class Bishop extends Pieces {
+       constructor(color,position,id,isAlive)
+       {
+            super(color,position,"Bishop",id,"3",isAlive);         
+       }
+       static movement(){
+            return "King moves * step";
+        }
+   }
+
+   class Rook extends Pieces{
+       constructor(color,position,id,isAlive)
+       {
+           super(color,position,"Rook",id,"5",isAlive);
+       }
+       static movement(){
+            return "King moves * step";
+        }
+   }
+ 
+   class Knight extends Pieces{
+       constructor(color,position,id,isAlive)
+       {
+           super(color,position,"Knight",id,"3",isAlive);
+       }
+       static movement(){
+            return "Knight moves 2-1/2 step";
+        }
+   }
+  
+  class Pawn extends Pieces
+  {
+      constructor(color,position,id,isAlive){
+          super(color,position,"Pawn",id,"1",isAlive);
+      }
+      static movement(){
+            return "Pawn moves 1 step";
+        }
+  }
+
+  //creating object
+var WhiteKing = new King("white"," ","WK","alive");
+var BlackKing = new King("black"," ","BK","alive"); 
+ 
+
+var WhiteQueen = new Queen("white"," ","WQ","alive");
+var BlackQueen = new Queen("black"," ","BQ","alive"); 
+   
+  console.log(WhiteKing.points);
+
+var i;
+  for( i=1;i<=2;i++)
+  {
+    var BishopBlack = new Bishop("Black"," "," ","yes")
+    var BishopWhite = new Bishop("White"," "," ","yes");
+  }
+ console.log(BishopBlack.color);
+  for( i=1;i<=2;i++)
+  {
+    var KnightBlack = new Bishop("Black"," "," ","yes");
+    var KnightWhite = new Bishop("White"," "," ","yes");
+  }
+  for( i=1;i<=2;i++)
+  {
+    var RookBlack = new Bishop("Black"," "," ","yes");
+    var RookWhite = new Bishop("White"," "," ","yes");
+  }
+  for( i=1;i<=8;i++)
+  {
+    var PawnBlack = new Bishop("Black"," "," ","yes");
+    var PawnWhite = new Bishop("White"," "," ","yes");
+  }
+console.dir(Pawn);
+ //creating object of 32 pieces
+ /*
+var King =["BlackKing","WhiteKing"];
+var Queen =["BlackQueen","WhiteQueen"];
+var Bishop = ["BlackBishopLeft","BlackBishopRight","WhiteBishopLeft","WhiteBishopRight"];
+var Knight = ["BlackKnightLeft","BlackKnightRight","WhiteKnightLeft","WhiteKnightRight"];
+var Rook = ["BlackRookLeft","BlackRookRight","WhiteRookLeft","WhiteRookRight"];
+var Pawn = ["BlackPawn1","BlackPawn2","BlackPawn3","BlackPawn4","BlackPawn5","BlackPawn6","BlackPawn7","BlackPawn8","WhitePawn1","WhitePawn2","WhitePawn3","WhitePawn4","WhitePawn5","WhitePawn6","WhitePawn7","WhitePawn8"];
+*/
+
+/*
+var WhiteKing = new King("White","","WhiteKing","alive");
+var WhiteQueen = new Queen("White","E1","WhiteQueen","alive");
+var WhiteBishopLeft = new Bishop("White","E1","BlackBishopLeft","alive");
+var WhiteRookLeft = new Rook("White","E1","WhiteRookLeft","alive");
+var WhiteKnightLeft = new Knight("White","E1","WhiteKnightLeft","alive");
+var WhiteBishopRight = new Bishop("White","E1","WhiteBishopRight","alive");
+var WhiteRookRight = new Rook("White","E1","WhiteRookRight","alive");
+var WhiteKnightRight = new Knight("White","E1","WhiteKnightRight","alive");
+var WhitePawn1 = new Pawn("White","","WhitePawn1","alive");
+var WhitePawn2 = new Pawn("White","","WhitePawn2","alive");
+var WhitePawn3 = new Pawn("White","","WhitePawn3","alive");
+var WhitePawn4 = new Pawn("White","","WhitePawn4","alive");
+var WhitePawn5 = new Pawn("White","","WhitePawn5","alive");
+var WhitePawn6 = new Pawn("White","","WhitePawn6","alive");
+var WhitePawn7 = new Pawn("White","","WhitePawn7","alive");
+var WhitePawn8 = new Pawn("White","","WhitePawn8","alive");
+
+var BlackKing = new King("Black","","BlackKing","alive");
+var BlackQueen = new Queen("Black","","BlackQueen","alive");
+var BlackBishopLeft = new Bishop("Black","E1","BlackBishopLeft","alive");
+var BlackRookLeft = new Rook("Black","E1","BlackRookLeft","alive");
+var BlackKnightLeft = new Knight("Black","E1","BlackKnightLeft","alive");
+var BlackBishopRight = new Bishop("Black","E1","BlackBishopRight","alive");
+var BlackRookRight = new Rook("Black","E1","BlackRookRight","alive");
+var BlackKnightRight = new Knight("Black","E1","BlackKnightRight","alive");
+var BlackPawn1 = new Pawn("Black","","BlackPawn1","alive");
+var BlackPawn2 = new Pawn("Black","","BlackPawn2","alive");
+var BlackPawn3 = new Pawn("Black","","BlackPawn3","alive");
+var BlackPawn4 = new Pawn("Black","","BlackPawn4","alive");
+var BlackPawn5 = new Pawn("Black","","BlackPawn5","alive");
+var BlackPawn6 = new Pawn("Black","","BlackPawn6","alive");
+var BlackPawn7 = new Pawn("Black","","BlackPawn7","alive");
+var BlackPawn8 = new Pawn("Black","","BlackPawn8","alive");
+*/
+</script>
+
+        
+<!--<h4><A>Small</small></h4>--> 
+          
+<!DOCTYPE html>
+      <html>
+<style type="text/css">
+    table , td ,tr
+    {
+        border :2px solid lightblue;
+        border-collapse :collapse;
+        width :1000px;
+        height:100px;
+    }
+</style>   
+<script>
+    document.write("<table>");
+    for(i=1;i<=8;i++)
+    { 
+        
+        document.write("<tr>");
+        if(i%2==0)
+        {
+            for(j=1;j<=8;j++)
+            {
+                if(j%2==0)
+                {
+                    document.write("<td style='background:grey' >  </td>");
+                   
+                }
+                else
+                {
+                    document.write("<td style='background:white'> </td>");
+                    
+                }
+            }
+        }
+        else
+        {
+            for(j=1;j<=8;j++)
+            {
+                if(j%2==0)
+                {
+                    document.write("<td style='background:white'> </td>");
+                
+                }
+                else
+                {
+                    document.write("<td style='background:grey'> </td>");
+                   
+                }
+            }
+        }
+    //  if(i==1)
+    //  {
+    //      for(j=1;j<=8;j++){
+    //      document.write("<td text>A</td>");
+    //        }
+    //  }
+        
+        document.write("</tr>");
+    }
+    document.write("</table>");
+
+  
+</script>
+</html>
+<html>
+    <head>
+        <title>
+            image
+        </title>
+    </head>
+    <body>
+        <p>hiiii</p>
+  <!--      < img src ="photo_91779838_corona-silueta-clip-art-diseño-vector-symbol-king.html">  -->
+    </body>
+</html>
+
+<!--
+
+     for (var i = 0; i < size; i++) 
+//     {        
+
+         
+
+//         for (var j = 0; j < size; j++) 
+//         {
+//         if((i +j) % 2 == 0)
+//         { 
+//             document.write('<div style="background-color:#000000;float:left;">&nbsp</div>');
+//         }
+//         else
+//         {
+//             document.write('<div style="background-color:#000000;float:left;">&nbsp</div>');    
+//         }
+//         }
+// }
+// }
+
+        // if(i%2==0 && i%4) 
+        //     {
+        //             document.write('<br/><div style="background-color:#000000;float:left;">&nbsp</div>');
+        
+        //             }
+        //     else    
+        //             {
+                
+        //             document.write('<div style="background-color:#000000;float:left;">&nbsp</div>');    
+        //             }
+                
+        
+        
+
+            /*  
+            */          
+            //count++;
+         //   }
+chessBoard(8);
+           -->
+    
+        
